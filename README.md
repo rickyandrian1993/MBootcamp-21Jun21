@@ -1,2 +1,2 @@
-# MBootcamp-21Jun21
+# MBootcamp-Challenge
 Challenge React JS
