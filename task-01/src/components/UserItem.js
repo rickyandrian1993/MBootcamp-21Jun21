@@ -1,51 +1,19 @@
 import React, { Component } from 'react'
+import { Card } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class UserItem extends Component {
   render() {
     return (
-      <div>
-        <CardDeck>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a wider card with supporting text below as a natural lead-in to
-                additional content. This content is a little bit longer.
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
-          </Card>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This card has supporting text below as a natural lead-in to additional
-                content.{' '}
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
-          </Card>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a wider card with supporting text below as a natural lead-in to
-                additional content. This card has even longer content than the first to
-                show that equal height action.
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
-          </Card>
-        </CardDeck>
+      <div class="row">
+        <Card className="mx-4 my-2" style={{ width: '18rem', color: '#000'}}>
+          <Card.Img variant="top" src={this.props.user.picture.large} />
+          <Card.Body>
+            <Card.Title>{this.props.user.name.title}. {this.props.user.name.first} {this.props.user.name.last}</Card.Title>
+            <Card.Text>{this.props.user.email}</Card.Text>
+            <Card.Text>{this.props.user.phone}</Card.Text>
+          </Card.Body>
+        </Card>
       </div>
     )
   }
