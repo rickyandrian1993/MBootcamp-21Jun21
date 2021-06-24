@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import User from './pages/User';
+import Users from './pages/Users';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <User />
+    <Users />
   </React.StrictMode>,
   document.getElementById('root')
 );
