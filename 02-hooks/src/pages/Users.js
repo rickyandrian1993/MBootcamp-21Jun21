@@ -16,15 +16,14 @@ function Users () {
       {error != null 
         ? <Alert variant="danger">{error}</Alert> 
         : <div>
-            
-              {loading 
-              ? (<Loading />)
-              : <Row className="d-flex justify-content-center">
-                  {users.map((user, key) => {
-                    return <UserCard key={ key } data={ user }/>;
-                  })}
-                </Row>
-              }
+            {loading 
+            ? (<Loading />)
+            : <Row className="d-flex justify-content-center">
+                {users.map((user, idx) => {
+                  return <UserCard key={ idx } data={ user }/>;
+                })}
+              </Row>
+            }
           </div>
       }
       </Container>

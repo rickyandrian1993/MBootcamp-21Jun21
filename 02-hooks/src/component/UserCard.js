@@ -3,6 +3,7 @@ import { Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function UserCard(props) {
+  console.log(props);
   return (
     <div>
       <Card className="mx-4 my-2 shadow" style={{ width: '18rem', color: '#000'}}>
