@@ -7,6 +7,7 @@ const useFetchUsers = () => {
 
   useEffect(() => {
     setLoading(true);
+    // fetch("https://jsonplaceholder.typicode.com/users")
     fetch("https://randomuser.me/api/?results=20")
     .then(response => response.json())
     .then(data => {
