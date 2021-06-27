@@ -20,14 +20,16 @@ const Home = () => {
         {error != null 
           ? <Error error={ error } />
           : <Container fluid>
-              {loading
-                ? <Loading />
-                : <Row className="d-flex min-vh-100 py-3 justify-content-center">
-                  {animes.map((anime, idx) => {
-                    return <AnimeCard key={ idx } data={ anime } />;
-                  })}
-                  </Row>
-              }
+            {loading
+              ? <Row className="min-vh-100 align-items-center">
+                  <Loading />
+                </Row>
+              : <Row className="py-3 justify-content-center">
+                {animes.map((anime, idx) => {
+                  return <AnimeCard key={ idx } data={ anime } />;
+                })}
+                </Row>
+            }
             </Container>
         }
         </Route>
