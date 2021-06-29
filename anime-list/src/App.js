@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import AnimeDetail from "./components/AnimeDetail";
+import Favorite from "./components/Favorites";
+import Home from "./pages/Home";
+import NavigatorBar from "./components/NavigatorBar";
+import store from "./store";
 
-function App() {
+import { Provider } from "react-redux";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+function App() { 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Router>
+        <div className="App">
+          <NavigatorBar />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/anime/:id" component={AnimeDetail} />
+              <Route exact path="/favorites" component={Favorite} />
+            </Switch>
+          </div>
+      </Router>
+    </Provider>
   );
 }
 
