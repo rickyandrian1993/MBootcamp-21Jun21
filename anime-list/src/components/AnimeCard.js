@@ -1,5 +1,4 @@
 import React from "react";
-import { addFavorite } from "../store/actions";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -10,8 +9,8 @@ function AnimeCard(props) {
   const dispatch = useDispatch();
 
   function handleFavorite() {
-    dispatch(addFavorite(data));
-    console.log(data.title);
+    // dispatch(addFavorite(data));
+    // console.log(data.title);
   }
 
   return (

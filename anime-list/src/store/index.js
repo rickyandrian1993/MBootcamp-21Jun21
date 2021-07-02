@@ -1,6 +1,21 @@
-import reducer from "./reducers";
-import { createStore } from "redux";
+import {
+  applyMiddleware, 
+  combineReducers, 
+  createStore
+} from "redux";
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-const store = createStore(reducer);
+import animes from "./animes/reducer";
+import logger from '../middlewares/logger';
+
+const store = createStore(
+  combineReducers({
+    animes,
+  }), 
+  composeWithDevTools(
+    applyMiddleware(logger, thunk)
+  )
+);
 
 export default store;
