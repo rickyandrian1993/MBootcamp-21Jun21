@@ -17,3 +17,17 @@ export const getAnimes = () => {
     });
   }
 }
+
+export function addFavorite(id) {
+  return {
+    type: "ADD_FAVORITE",
+    data: id,
+  }
+}
+
+export function removeFavorite(id) {
+  return {
+    type: "REMOVE_FAVORITE",
+    data: id,
+  }
+}

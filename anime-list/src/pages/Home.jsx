@@ -1,16 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Error from '../components/Error'
 import Loading from '../components/Loading'
 import AnimeCard from '../components/AnimeCard'
-import useFetctAnimes from '../services/hooks/useFetchAnimes'
-import { Container, Row } from "react-bootstrap"
+import { Col,Container, Row } from "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import { useDispatch, useSelector, } from 'react-redux';
 import { getAnimes } from '../store/animes/action';
 
 const Home = () => {
-  // const { datas: animes, error, loading } = useFetctAnimes();
   const animes = useSelector((state) => state.animes.data);
   const error = useSelector((state) => state.animes.error);
   const loading = useSelector((state) => state.animes.loading);
@@ -22,7 +20,7 @@ const Home = () => {
 
   return (
     <>
-      <h1>Ini Home</h1>
+      <h1>List Animes</h1>
       {error != null 
         ? <Error error={ error } />
         : <Container fluid>
@@ -32,7 +30,9 @@ const Home = () => {
               </Row>
             : <Row className="justify-content-center">
               {animes.map((anime, idx) => {
-                return <AnimeCard key={ idx } data={ anime } />;
+                return <Col key={idx} align="center">
+                  <AnimeCard data={ anime } />
+                </Col>
               })}
               </Row>
           }
